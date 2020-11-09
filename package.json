@@ -1,0 +1,117 @@
+{
+  "name": "muteswan",
+  "version": "0.8.2",
+  "description": "🦢",
+  "main": "",
+  "scripts": {
+    "rollup:prod": "NODE_ENV=production npx rollup -c",
+    "rollup:dev": "NODE_ENV=development npx rollup -c",
+    "templates:prod": "NODE_ENV=production npx babel-node src/build.js",
+    "templates:dev": "NODE_ENV=development npx babel-node src/build.js",
+    "build:prod": "npm run templates:prod && npm run rollup:prod",
+    "build:dev": "npm run templates:dev && npm run rollup:dev",
+    "build": "npm run build:dev",
+    "deploy": "npm run build:prod && netlify deploy",
+    "serve": "http-server --proxy http://muteswan.localhost:8080\\? ./public",
+    "test": "npx xo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbushell/muteswan.git"
+  },
+  "keywords": [
+    "🦢"
+  ],
+  "author": {
+    "name": "David Bushell",
+    "email": "hi@dbushell.com",
+    "url": "https://dbushell.com/"
+  },
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/dbushell/muteswan/issues"
+  },
+  "homepage": "https://github.com/dbushell/muteswan#readme",
+  "dependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/node": "^7.12.6",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
+    "@babel/runtime": "^7.12.5",
+    "@rollup/plugin-alias": "^3.1.1",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "@rollup/plugin-replace": "^2.3.4",
+    "core-js": "^3.7.0",
+    "csso": "^4.1.0",
+    "immer": "^7.0.14",
+    "node-sass": "^5.0.0",
+    "preact": "^10.5.5",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "redux-persist": "^6.0.0",
+    "rollup": "^2.33.1",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "devDependencies": {
+    "eslint-config-xo": "^0.33.1",
+    "eslint-config-xo-react": "^0.23.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "xo": "^0.34.2"
+  },
+  "babel": {
+    "plugins": [
+      "@babel/plugin-transform-runtime"
+    ],
+    "presets": [
+      [
+        "@babel/preset-react"
+      ],
+      [
+        "@babel/preset-env",
+        {
+          "debug": false,
+          "bugfixes": true,
+          "targets": {
+            "esmodules": true
+          }
+        }
+      ]
+    ]
+  },
+  "xo": {
+    "space": true,
+    "prettier": true,
+    "globals": [
+      "window"
+    ],
+    "extends": [
+      "xo-react"
+    ],
+    "ignores": [
+      "./*.js",
+      "src/templates",
+      "src/build.js",
+      "node_modules",
+      "public",
+      "twa"
+    ],
+    "rules": {
+      "react/prop-types": [
+        "warn",
+        {
+          "skipUndeclared": true
+        }
+      ],
+      "react/jsx-curly-brace-presence": [
+        "error",
+        "ignore"
+      ]
+    }
+  }
+}

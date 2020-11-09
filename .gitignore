@@ -1,0 +1,11 @@
+/*
+!.github
+!.gitignore
+!package.json
+!README.md
+!netlify.toml
+!rollup.config.js
+!bubblewrap
+!public
+public/**/*.min.js
+!src

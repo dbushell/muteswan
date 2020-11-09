@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.muteswan.android",
+      "sha256_cert_fingerprints": [
+        "D6:04:9A:74:08:FA:90:45:13:6D:25:C4:86:A4:E0:31:8D:CD:72:DF:50:0B:F5:2F:6C:A0:E1:98:A8:D6:65:6F"
+      ]
+    }
+  }
+]

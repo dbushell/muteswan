@@ -1,0 +1,17 @@
+[build]
+  publish = "./public"
+  command = "npm run build:prod"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Content-Security-Policy = "default-src 'self'; connect-src 'self'; style-src 'sha256-EiAvdyWT1XAxMD26ObB7rFnIERnS32iubT92KlRA058='; frame-ancestors 'none'"

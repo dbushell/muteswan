@@ -1,0 +1,10 @@
+/*
+!.gitignore
+!build.gradle
+!gradle.properties
+!gradlew
+!gradlew.bat
+!settings.gradle
+!.idea
+!app
+!gradle
