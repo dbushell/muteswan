@@ -32993,7 +32993,7 @@ const userMiddleware = () => next => action => {
   next(action);
 };
 
-function n(n){for(var t=arguments.length,r=Array(t>1?t-1:0),e=1;e<t;e++)r[e-1]=arguments[e];{var i=Y[n],o=i?"function"==typeof i?i.apply(null,r):i:"unknown error nr: "+n;throw Error("[Immer] "+o)}}function t(n){return !!n&&!!n[Q]}function r(n){return !!n&&(function(n){if(!n||"object"!=typeof n)return !1;var t=Object.getPrototypeOf(n);return !t||t===Object.prototype}(n)||Array.isArray(n)||!!n[L]||!!n.constructor[L]||s(n)||v(n))}function i(n,t,r){void 0===r&&(r=!1),0===o(n)?(r?Object.keys:Z)(n).forEach((function(e){r&&"symbol"==typeof e||t(e,n[e],n);})):n.forEach((function(r,e){return t(e,r,n)}));}function o(n){var t=n[Q];return t?t.i>3?t.i-4:t.i:Array.isArray(n)?1:s(n)?2:v(n)?3:0}function u(n,t){return 2===o(n)?n.has(t):Object.prototype.hasOwnProperty.call(n,t)}function a(n,t){return 2===o(n)?n.get(t):n[t]}function f(n,t,r){var e=o(n);2===e?n.set(t,r):3===e?(n.delete(t),n.add(r)):n[t]=r;}function c(n,t){return n===t?0!==n||1/n==1/t:n!=n&&t!=t}function s(n){return X&&n instanceof Map}function v(n){return q&&n instanceof Set}function p(n){return n.o||n.t}function l(n){if(Array.isArray(n))return Array.prototype.slice.call(n);var t=nn(n);delete t[Q];for(var r=Z(t),e=0;e<r.length;e++){var i=r[e],o=t[i];!1===o.writable&&(o.writable=!0,o.configurable=!0),(o.get||o.set)&&(t[i]={configurable:!0,writable:!0,enumerable:o.enumerable,value:n[i]});}return Object.create(Object.getPrototypeOf(n),t)}function d(n,e){y(n)||t(n)||!r(n)||(o(n)>1&&(n.set=n.add=n.clear=n.delete=h),Object.freeze(n),e&&i(n,(function(n,t){return d(t,!0)}),!0));}function h(){n(2);}function y(n){return null==n||"object"!=typeof n||Object.isFrozen(n)}function b(t){var r=tn[t];return r||n(18,t),r}function m(n,t){tn[n]=t;}function _(){return U||n(0),U}function j(n,t){t&&(b("Patches"),n.u=[],n.s=[],n.v=t);}function g(n){O(n),n.p.forEach(S),n.p=null;}function O(n){n===U&&(U=n.l);}function w(n){return U={p:[],l:U,h:n,m:!0,_:0}}function S(n){var t=n[Q];0===t.i||1===t.i?t.j():t.g=!0;}function P(t,e){e._=e.p.length;var i=e.p[0],o=void 0!==t&&t!==i;return e.h.O||b("ES5").S(e,t,o),o?(i[Q].P&&(g(e),n(4)),r(t)&&(t=M(e,t),e.l||x(e,t)),e.u&&b("Patches").M(i[Q],t,e.u,e.s)):t=M(e,i,[]),g(e),e.u&&e.v(e.u,e.s),t!==H?t:void 0}function M(n,t,r){if(y(t))return t;var e=t[Q];if(!e)return i(t,(function(i,o){return A(n,e,t,i,o,r)}),!0),t;if(e.A!==n)return t;if(!e.P)return x(n,e.t,!0),e.t;if(!e.I){e.I=!0,e.A._--;var o=4===e.i||5===e.i?e.o=l(e.k):e.o;i(3===e.i?new Set(o):o,(function(t,i){return A(n,e,o,t,i,r)})),x(n,o,!1),r&&n.u&&b("Patches").R(e,r,n.u,n.s);}return e.o}function A(e,i,o,a,c,s){if(c===o&&n(5),t(c)){var v=M(e,c,s&&i&&3!==i.i&&!u(i.D,a)?s.concat(a):void 0);if(f(o,a,v),!t(v))return;e.m=!1;}if(r(c)&&!y(c)){if(!e.h.N&&e._<1)return;M(e,c),i&&i.A.l||x(e,c);}}function x(n,t,r){void 0===r&&(r=!1),n.h.N&&n.m&&d(t,r);}function z(n,t){var r=n[Q];return (r?p(r):n)[t]}function I(n,t){if(t in n)for(var r=Object.getPrototypeOf(n);r;){var e=Object.getOwnPropertyDescriptor(r,t);if(e)return e;r=Object.getPrototypeOf(r);}}function E(n){n.P||(n.P=!0,n.l&&E(n.l));}function k(n){n.o||(n.o=l(n.t));}function R(n,t,r){var e=s(t)?b("MapSet").T(t,r):v(t)?b("MapSet").F(t,r):n.O?function(n,t){var r=Array.isArray(n),e={i:r?1:0,A:t?t.A:_(),P:!1,I:!1,D:{},l:t,t:n,k:null,o:null,j:null,C:!1},i=e,o=rn;r&&(i=[e],o=en);var u=Proxy.revocable(i,o),a=u.revoke,f=u.proxy;return e.k=f,e.j=a,f}(t,r):b("ES5").J(t,r);return (r?r.A:_()).p.push(e),e}function D(e){return t(e)||n(22,e),function n(t){if(!r(t))return t;var e,u=t[Q],c=o(t);if(u){if(!u.P&&(u.i<4||!b("ES5").K(u)))return u.t;u.I=!0,e=N(t,c),u.I=!1;}else e=N(t,c);return i(e,(function(t,r){u&&a(u.t,t)===r||f(e,t,n(r));})),3===c?new Set(e):e}(e)}function N(n,t){switch(t){case 2:return new Map(n);case 3:return Array.from(n)}return l(n)}function F(){function e(n){if(!r(n))return n;if(Array.isArray(n))return n.map(e);if(s(n))return new Map(Array.from(n.entries()).map((function(n){return [n[0],e(n[1])]})));if(v(n))return new Set(Array.from(n).map(e));var t=Object.create(Object.getPrototypeOf(n));for(var i in n)t[i]=e(n[i]);return t}function f(n){return t(n)?e(n):n}var c="add";m("Patches",{$:function(t,r){return r.forEach((function(r){for(var i=r.path,u=r.op,f=t,s=0;s<i.length-1;s++)"object"!=typeof(f=a(f,i[s]))&&n(15,i.join("/"));var v=o(f),p=e(r.value),l=i[i.length-1];switch(u){case"replace":switch(v){case 2:return f.set(l,p);case 3:n(16);default:return f[l]=p}case c:switch(v){case 1:return f.splice(l,0,p);case 2:return f.set(l,p);case 3:return f.add(p);default:return f[l]=p}case"remove":switch(v){case 1:return f.splice(l,1);case 2:return f.delete(l);case 3:return f.delete(r.value);default:return delete f[l]}default:n(17,u);}})),t},R:function(n,t,r,e){switch(n.i){case 0:case 4:case 2:return function(n,t,r,e){var o=n.t,s=n.o;i(n.D,(function(n,i){var v=a(o,n),p=a(s,n),l=i?u(o,n)?"replace":c:"remove";if(v!==p||"replace"!==l){var d=t.concat(n);r.push("remove"===l?{op:l,path:d}:{op:l,path:d,value:p}),e.push(l===c?{op:"remove",path:d}:"remove"===l?{op:c,path:d,value:f(v)}:{op:"replace",path:d,value:f(v)});}}));}(n,t,r,e);case 5:case 1:return function(n,t,r,e){var i=n.t,o=n.D,u=n.o;if(u.length<i.length){var a=[u,i];i=a[0],u=a[1];var s=[e,r];r=s[0],e=s[1];}for(var v=0;v<i.length;v++)if(o[v]&&u[v]!==i[v]){var p=t.concat([v]);r.push({op:"replace",path:p,value:f(u[v])}),e.push({op:"replace",path:p,value:f(i[v])});}for(var l=i.length;l<u.length;l++){var d=t.concat([l]);r.push({op:c,path:d,value:f(u[l])});}i.length<u.length&&e.push({op:"replace",path:t.concat(["length"]),value:i.length});}(n,t,r,e);case 3:return function(n,t,r,e){var i=n.t,o=n.o,u=0;i.forEach((function(n){if(!o.has(n)){var i=t.concat([u]);r.push({op:"remove",path:i,value:n}),e.unshift({op:c,path:i,value:n});}u++;})),u=0,o.forEach((function(n){if(!i.has(n)){var o=t.concat([u]);r.push({op:c,path:o,value:n}),e.unshift({op:"remove",path:o,value:n});}u++;}));}(n,t,r,e)}},M:function(n,t,r,e){r.push({op:"replace",path:[],value:t}),e.push({op:"replace",path:[],value:n.t});}});}var G,U,W="undefined"!=typeof Symbol&&"symbol"==typeof Symbol("x"),X="undefined"!=typeof Map,q="undefined"!=typeof Set,B="undefined"!=typeof Proxy&&void 0!==Proxy.revocable&&"undefined"!=typeof Reflect,H=W?Symbol.for("immer-nothing"):((G={})["immer-nothing"]=!0,G),L=W?Symbol.for("immer-draftable"):"__$immer_draftable",Q=W?Symbol.for("immer-state"):"__$immer_state",Y={0:"Illegal state",1:"Immer drafts cannot have computed properties",2:"This object has been frozen and should not be mutated",3:function(n){return "Cannot use a proxy that has been revoked. Did you pass an object from inside an immer function to an async process? "+n},4:"An immer producer returned a new value *and* modified its draft. Either return a new value *or* modify the draft.",5:"Immer forbids circular references",6:"The first or second argument to `produce` must be a function",7:"The third argument to `produce` must be a function or undefined",8:"First argument to `createDraft` must be a plain object, an array, or an immerable object",9:"First argument to `finishDraft` must be a draft returned by `createDraft`",10:"The given draft is already finalized",11:"Object.defineProperty() cannot be used on an Immer draft",12:"Object.setPrototypeOf() cannot be used on an Immer draft",13:"Immer only supports deleting array indices",14:"Immer only supports setting array indices and the 'length' property",15:function(n){return "Cannot apply patch, path doesn't resolve: "+n},16:'Sets cannot have "replace" patches.',17:function(n){return "Unsupported patch operation: "+n},18:function(n){return "The plugin for '"+n+"' has not been loaded into Immer. To enable the plugin, import and call `enable"+n+"()` when initializing your application."},19:"plugin not loaded",20:"Cannot use proxies if Proxy, Proxy.revocable or Reflect are not available",21:function(n){return "produce can only be called on things that are draftable: plain objects, arrays, Map, Set or classes that are marked with '[immerable]: true'. Got '"+n+"'"},22:function(n){return "'current' expects a draft, got: "+n},23:function(n){return "'original' expects a draft, got: "+n}},Z="undefined"!=typeof Reflect&&Reflect.ownKeys?Reflect.ownKeys:void 0!==Object.getOwnPropertySymbols?function(n){return Object.getOwnPropertyNames(n).concat(Object.getOwnPropertySymbols(n))}:Object.getOwnPropertyNames,nn=Object.getOwnPropertyDescriptors||function(n){var t={};return Z(n).forEach((function(r){t[r]=Object.getOwnPropertyDescriptor(n,r);})),t},tn={},rn={get:function(n,t){if(t===Q)return n;var e=p(n);if(!u(e,t))return function(n,t,r){var e,i=I(t,r);return i?"value"in i?i.value:null===(e=i.get)||void 0===e?void 0:e.call(n.k):void 0}(n,e,t);var i=e[t];return n.I||!r(i)?i:i===z(n.t,t)?(k(n),n.o[t]=R(n.A.h,i,n)):i},has:function(n,t){return t in p(n)},ownKeys:function(n){return Reflect.ownKeys(p(n))},set:function(n,t,r){var e=I(p(n),t);if(null==e?void 0:e.set)return e.set.call(n.k,r),!0;if(!n.P){var i=z(p(n),t),o=null==i?void 0:i[Q];if(o&&o.t===r)return n.o[t]=r,n.D[t]=!1,!0;if(c(r,i)&&(void 0!==r||u(n.t,t)))return !0;k(n),E(n);}return n.o[t]=r,n.D[t]=!0,!0},deleteProperty:function(n,t){return void 0!==z(n.t,t)||t in n.t?(n.D[t]=!1,k(n),E(n)):delete n.D[t],n.o&&delete n.o[t],!0},getOwnPropertyDescriptor:function(n,t){var r=p(n),e=Reflect.getOwnPropertyDescriptor(r,t);return e?{writable:!0,configurable:1!==n.i||"length"!==t,enumerable:e.enumerable,value:r[t]}:e},defineProperty:function(){n(11);},getPrototypeOf:function(n){return Object.getPrototypeOf(n.t)},setPrototypeOf:function(){n(12);}},en={};i(rn,(function(n,t){en[n]=function(){return arguments[0]=arguments[0][0],t.apply(this,arguments)};})),en.deleteProperty=function(t,r){return isNaN(parseInt(r))&&n(13),rn.deleteProperty.call(this,t[0],r)},en.set=function(t,r,e){return "length"!==r&&isNaN(parseInt(r))&&n(14),rn.set.call(this,t[0],r,e,t[0])};var on=function(){function e(n){this.O=B,this.N="production"!=="development","boolean"==typeof(null==n?void 0:n.useProxies)&&this.setUseProxies(n.useProxies),"boolean"==typeof(null==n?void 0:n.autoFreeze)&&this.setAutoFreeze(n.autoFreeze),this.produce=this.produce.bind(this),this.produceWithPatches=this.produceWithPatches.bind(this);}var i=e.prototype;return i.produce=function(t,e,i){if("function"==typeof t&&"function"!=typeof e){var o=e;e=t;var u=this;return function(n){var t=this;void 0===n&&(n=o);for(var r=arguments.length,i=Array(r>1?r-1:0),a=1;a<r;a++)i[a-1]=arguments[a];return u.produce(n,(function(n){var r;return (r=e).call.apply(r,[t,n].concat(i))}))}}var a;if("function"!=typeof e&&n(6),void 0!==i&&"function"!=typeof i&&n(7),r(t)){var f=w(this),c=R(this,t,void 0),s=!0;try{a=e(c),s=!1;}finally{s?g(f):O(f);}return "undefined"!=typeof Promise&&a instanceof Promise?a.then((function(n){return j(f,i),P(n,f)}),(function(n){throw g(f),n})):(j(f,i),P(a,f))}if(!t||"object"!=typeof t){if((a=e(t))===H)return;return void 0===a&&(a=t),this.N&&d(a,!0),a}n(21,t);},i.produceWithPatches=function(n,t){var r,e,i=this;return "function"==typeof n?function(t){for(var r=arguments.length,e=Array(r>1?r-1:0),o=1;o<r;o++)e[o-1]=arguments[o];return i.produceWithPatches(t,(function(t){return n.apply(void 0,[t].concat(e))}))}:[this.produce(n,t,(function(n,t){r=n,e=t;})),r,e]},i.createDraft=function(e){r(e)||n(8),t(e)&&(e=D(e));var i=w(this),o=R(this,e,void 0);return o[Q].C=!0,O(i),o},i.finishDraft=function(t,r){var e=t&&t[Q];(e&&e.C||n(9),e.I&&n(10));var i=e.A;return j(i,r),P(void 0,i)},i.setAutoFreeze=function(n){this.N=n;},i.setUseProxies=function(t){t&&!B&&n(20),this.O=t;},i.applyPatches=function(n,r){var e;for(e=r.length-1;e>=0;e--){var i=r[e];if(0===i.path.length&&"replace"===i.op){n=i.value;break}}var o=b("Patches").$;return t(n)?o(n,r):this.produce(n,(function(n){return o(n,r.slice(e+1))}))},e}(),un=new on,an=un.produce,fn=un.produceWithPatches.bind(un),cn=un.setAutoFreeze.bind(un),sn=un.setUseProxies.bind(un),vn=un.applyPatches.bind(un),pn=un.createDraft.bind(un),ln=un.finishDraft.bind(un);
+function n(n){for(var t=arguments.length,r=Array(t>1?t-1:0),e=1;e<t;e++)r[e-1]=arguments[e];{var i=Y[n],o=i?"function"==typeof i?i.apply(null,r):i:"unknown error nr: "+n;throw Error("[Immer] "+o)}}function t(n){return !!n&&!!n[Q]}function r(n){return !!n&&(function(n){if(!n||"object"!=typeof n)return !1;var t=Object.getPrototypeOf(n);return !t||t===Object.prototype}(n)||Array.isArray(n)||!!n[L]||!!n.constructor[L]||s(n)||v(n))}function i(n,t,r){void 0===r&&(r=!1),0===o(n)?(r?Object.keys:Z)(n).forEach((function(e){r&&"symbol"==typeof e||t(e,n[e],n);})):n.forEach((function(r,e){return t(e,r,n)}));}function o(n){var t=n[Q];return t?t.i>3?t.i-4:t.i:Array.isArray(n)?1:s(n)?2:v(n)?3:0}function u(n,t){return 2===o(n)?n.has(t):Object.prototype.hasOwnProperty.call(n,t)}function a(n,t){return 2===o(n)?n.get(t):n[t]}function f(n,t,r){var e=o(n);2===e?n.set(t,r):3===e?(n.delete(t),n.add(r)):n[t]=r;}function c(n,t){return n===t?0!==n||1/n==1/t:n!=n&&t!=t}function s(n){return X&&n instanceof Map}function v(n){return q&&n instanceof Set}function p(n){return n.o||n.t}function l(n){if(Array.isArray(n))return Array.prototype.slice.call(n);var t=nn(n);delete t[Q];for(var r=Z(t),e=0;e<r.length;e++){var i=r[e],o=t[i];!1===o.writable&&(o.writable=!0,o.configurable=!0),(o.get||o.set)&&(t[i]={configurable:!0,writable:!0,enumerable:o.enumerable,value:n[i]});}return Object.create(Object.getPrototypeOf(n),t)}function d(n,e){return void 0===e&&(e=!1),y(n)||t(n)||!r(n)?n:(o(n)>1&&(n.set=n.add=n.clear=n.delete=h),Object.freeze(n),e&&i(n,(function(n,t){return d(t,!0)}),!0),n)}function h(){n(2);}function y(n){return null==n||"object"!=typeof n||Object.isFrozen(n)}function b(t){var r=tn[t];return r||n(18,t),r}function m(n,t){tn[n]||(tn[n]=t);}function _(){return U||n(0),U}function j(n,t){t&&(b("Patches"),n.u=[],n.s=[],n.v=t);}function g(n){O(n),n.p.forEach(S),n.p=null;}function O(n){n===U&&(U=n.l);}function w(n){return U={p:[],l:U,h:n,m:!0,_:0}}function S(n){var t=n[Q];0===t.i||1===t.i?t.j():t.g=!0;}function P(t,e){e._=e.p.length;var i=e.p[0],o=void 0!==t&&t!==i;return e.h.O||b("ES5").S(e,t,o),o?(i[Q].P&&(g(e),n(4)),r(t)&&(t=M(e,t),e.l||x(e,t)),e.u&&b("Patches").M(i[Q],t,e.u,e.s)):t=M(e,i,[]),g(e),e.u&&e.v(e.u,e.s),t!==H?t:void 0}function M(n,t,r){if(y(t))return t;var e=t[Q];if(!e)return i(t,(function(i,o){return A(n,e,t,i,o,r)}),!0),t;if(e.A!==n)return t;if(!e.P)return x(n,e.t,!0),e.t;if(!e.I){e.I=!0,e.A._--;var o=4===e.i||5===e.i?e.o=l(e.k):e.o;i(3===e.i?new Set(o):o,(function(t,i){return A(n,e,o,t,i,r)})),x(n,o,!1),r&&n.u&&b("Patches").R(e,r,n.u,n.s);}return e.o}function A(e,i,o,a,c,s){if(c===o&&n(5),t(c)){var v=M(e,c,s&&i&&3!==i.i&&!u(i.D,a)?s.concat(a):void 0);if(f(o,a,v),!t(v))return;e.m=!1;}if(r(c)&&!y(c)){if(!e.h.N&&e._<1)return;M(e,c),i&&i.A.l||x(e,c);}}function x(n,t,r){void 0===r&&(r=!1),n.h.N&&n.m&&d(t,r);}function z(n,t){var r=n[Q];return (r?p(r):n)[t]}function I(n,t){if(t in n)for(var r=Object.getPrototypeOf(n);r;){var e=Object.getOwnPropertyDescriptor(r,t);if(e)return e;r=Object.getPrototypeOf(r);}}function E(n){n.P||(n.P=!0,n.l&&E(n.l));}function k(n){n.o||(n.o=l(n.t));}function R(n,t,r){var e=s(t)?b("MapSet").T(t,r):v(t)?b("MapSet").F(t,r):n.O?function(n,t){var r=Array.isArray(n),e={i:r?1:0,A:t?t.A:_(),P:!1,I:!1,D:{},l:t,t:n,k:null,o:null,j:null,C:!1},i=e,o=rn;r&&(i=[e],o=en);var u=Proxy.revocable(i,o),a=u.revoke,f=u.proxy;return e.k=f,e.j=a,f}(t,r):b("ES5").J(t,r);return (r?r.A:_()).p.push(e),e}function D(e){return t(e)||n(22,e),function n(t){if(!r(t))return t;var e,u=t[Q],c=o(t);if(u){if(!u.P&&(u.i<4||!b("ES5").K(u)))return u.t;u.I=!0,e=N(t,c),u.I=!1;}else e=N(t,c);return i(e,(function(t,r){u&&a(u.t,t)===r||f(e,t,n(r));})),3===c?new Set(e):e}(e)}function N(n,t){switch(t){case 2:return new Map(n);case 3:return Array.from(n)}return l(n)}function F(){function e(n){if(!r(n))return n;if(Array.isArray(n))return n.map(e);if(s(n))return new Map(Array.from(n.entries()).map((function(n){return [n[0],e(n[1])]})));if(v(n))return new Set(Array.from(n).map(e));var t=Object.create(Object.getPrototypeOf(n));for(var i in n)t[i]=e(n[i]);return t}function f(n){return t(n)?e(n):n}var c="add";m("Patches",{$:function(t,r){return r.forEach((function(r){for(var i=r.path,u=r.op,f=t,s=0;s<i.length-1;s++)"object"!=typeof(f=a(f,i[s]))&&n(15,i.join("/"));var v=o(f),p=e(r.value),l=i[i.length-1];switch(u){case"replace":switch(v){case 2:return f.set(l,p);case 3:n(16);default:return f[l]=p}case c:switch(v){case 1:return f.splice(l,0,p);case 2:return f.set(l,p);case 3:return f.add(p);default:return f[l]=p}case"remove":switch(v){case 1:return f.splice(l,1);case 2:return f.delete(l);case 3:return f.delete(r.value);default:return delete f[l]}default:n(17,u);}})),t},R:function(n,t,r,e){switch(n.i){case 0:case 4:case 2:return function(n,t,r,e){var o=n.t,s=n.o;i(n.D,(function(n,i){var v=a(o,n),p=a(s,n),l=i?u(o,n)?"replace":c:"remove";if(v!==p||"replace"!==l){var d=t.concat(n);r.push("remove"===l?{op:l,path:d}:{op:l,path:d,value:p}),e.push(l===c?{op:"remove",path:d}:"remove"===l?{op:c,path:d,value:f(v)}:{op:"replace",path:d,value:f(v)});}}));}(n,t,r,e);case 5:case 1:return function(n,t,r,e){var i=n.t,o=n.D,u=n.o;if(u.length<i.length){var a=[u,i];i=a[0],u=a[1];var s=[e,r];r=s[0],e=s[1];}for(var v=0;v<i.length;v++)if(o[v]&&u[v]!==i[v]){var p=t.concat([v]);r.push({op:"replace",path:p,value:f(u[v])}),e.push({op:"replace",path:p,value:f(i[v])});}for(var l=i.length;l<u.length;l++){var d=t.concat([l]);r.push({op:c,path:d,value:f(u[l])});}i.length<u.length&&e.push({op:"replace",path:t.concat(["length"]),value:i.length});}(n,t,r,e);case 3:return function(n,t,r,e){var i=n.t,o=n.o,u=0;i.forEach((function(n){if(!o.has(n)){var i=t.concat([u]);r.push({op:"remove",path:i,value:n}),e.unshift({op:c,path:i,value:n});}u++;})),u=0,o.forEach((function(n){if(!i.has(n)){var o=t.concat([u]);r.push({op:c,path:o,value:n}),e.unshift({op:"remove",path:o,value:n});}u++;}));}(n,t,r,e)}},M:function(n,t,r,e){r.push({op:"replace",path:[],value:t}),e.push({op:"replace",path:[],value:n.t});}});}var G,U,W="undefined"!=typeof Symbol&&"symbol"==typeof Symbol("x"),X="undefined"!=typeof Map,q="undefined"!=typeof Set,B="undefined"!=typeof Proxy&&void 0!==Proxy.revocable&&"undefined"!=typeof Reflect,H=W?Symbol.for("immer-nothing"):((G={})["immer-nothing"]=!0,G),L=W?Symbol.for("immer-draftable"):"__$immer_draftable",Q=W?Symbol.for("immer-state"):"__$immer_state",Y={0:"Illegal state",1:"Immer drafts cannot have computed properties",2:"This object has been frozen and should not be mutated",3:function(n){return "Cannot use a proxy that has been revoked. Did you pass an object from inside an immer function to an async process? "+n},4:"An immer producer returned a new value *and* modified its draft. Either return a new value *or* modify the draft.",5:"Immer forbids circular references",6:"The first or second argument to `produce` must be a function",7:"The third argument to `produce` must be a function or undefined",8:"First argument to `createDraft` must be a plain object, an array, or an immerable object",9:"First argument to `finishDraft` must be a draft returned by `createDraft`",10:"The given draft is already finalized",11:"Object.defineProperty() cannot be used on an Immer draft",12:"Object.setPrototypeOf() cannot be used on an Immer draft",13:"Immer only supports deleting array indices",14:"Immer only supports setting array indices and the 'length' property",15:function(n){return "Cannot apply patch, path doesn't resolve: "+n},16:'Sets cannot have "replace" patches.',17:function(n){return "Unsupported patch operation: "+n},18:function(n){return "The plugin for '"+n+"' has not been loaded into Immer. To enable the plugin, import and call `enable"+n+"()` when initializing your application."},20:"Cannot use proxies if Proxy, Proxy.revocable or Reflect are not available",21:function(n){return "produce can only be called on things that are draftable: plain objects, arrays, Map, Set or classes that are marked with '[immerable]: true'. Got '"+n+"'"},22:function(n){return "'current' expects a draft, got: "+n},23:function(n){return "'original' expects a draft, got: "+n}},Z="undefined"!=typeof Reflect&&Reflect.ownKeys?Reflect.ownKeys:void 0!==Object.getOwnPropertySymbols?function(n){return Object.getOwnPropertyNames(n).concat(Object.getOwnPropertySymbols(n))}:Object.getOwnPropertyNames,nn=Object.getOwnPropertyDescriptors||function(n){var t={};return Z(n).forEach((function(r){t[r]=Object.getOwnPropertyDescriptor(n,r);})),t},tn={},rn={get:function(n,t){if(t===Q)return n;var e=p(n);if(!u(e,t))return function(n,t,r){var e,i=I(t,r);return i?"value"in i?i.value:null===(e=i.get)||void 0===e?void 0:e.call(n.k):void 0}(n,e,t);var i=e[t];return n.I||!r(i)?i:i===z(n.t,t)?(k(n),n.o[t]=R(n.A.h,i,n)):i},has:function(n,t){return t in p(n)},ownKeys:function(n){return Reflect.ownKeys(p(n))},set:function(n,t,r){var e=I(p(n),t);if(null==e?void 0:e.set)return e.set.call(n.k,r),!0;if(!n.P){var i=z(p(n),t),o=null==i?void 0:i[Q];if(o&&o.t===r)return n.o[t]=r,n.D[t]=!1,!0;if(c(r,i)&&(void 0!==r||u(n.t,t)))return !0;k(n),E(n);}return n.o[t]=r,n.D[t]=!0,!0},deleteProperty:function(n,t){return void 0!==z(n.t,t)||t in n.t?(n.D[t]=!1,k(n),E(n)):delete n.D[t],n.o&&delete n.o[t],!0},getOwnPropertyDescriptor:function(n,t){var r=p(n),e=Reflect.getOwnPropertyDescriptor(r,t);return e?{writable:!0,configurable:1!==n.i||"length"!==t,enumerable:e.enumerable,value:r[t]}:e},defineProperty:function(){n(11);},getPrototypeOf:function(n){return Object.getPrototypeOf(n.t)},setPrototypeOf:function(){n(12);}},en={};i(rn,(function(n,t){en[n]=function(){return arguments[0]=arguments[0][0],t.apply(this,arguments)};})),en.deleteProperty=function(t,r){return isNaN(parseInt(r))&&n(13),rn.deleteProperty.call(this,t[0],r)},en.set=function(t,r,e){return "length"!==r&&isNaN(parseInt(r))&&n(14),rn.set.call(this,t[0],r,e,t[0])};var on=function(){function e(n){this.O=B,this.N=!0,"boolean"==typeof(null==n?void 0:n.useProxies)&&this.setUseProxies(n.useProxies),"boolean"==typeof(null==n?void 0:n.autoFreeze)&&this.setAutoFreeze(n.autoFreeze),this.produce=this.produce.bind(this),this.produceWithPatches=this.produceWithPatches.bind(this);}var i=e.prototype;return i.produce=function(t,e,i){if("function"==typeof t&&"function"!=typeof e){var o=e;e=t;var u=this;return function(n){var t=this;void 0===n&&(n=o);for(var r=arguments.length,i=Array(r>1?r-1:0),a=1;a<r;a++)i[a-1]=arguments[a];return u.produce(n,(function(n){var r;return (r=e).call.apply(r,[t,n].concat(i))}))}}var a;if("function"!=typeof e&&n(6),void 0!==i&&"function"!=typeof i&&n(7),r(t)){var f=w(this),c=R(this,t,void 0),s=!0;try{a=e(c),s=!1;}finally{s?g(f):O(f);}return "undefined"!=typeof Promise&&a instanceof Promise?a.then((function(n){return j(f,i),P(n,f)}),(function(n){throw g(f),n})):(j(f,i),P(a,f))}if(!t||"object"!=typeof t){if((a=e(t))===H)return;return void 0===a&&(a=t),this.N&&d(a,!0),a}n(21,t);},i.produceWithPatches=function(n,t){var r,e,i=this;return "function"==typeof n?function(t){for(var r=arguments.length,e=Array(r>1?r-1:0),o=1;o<r;o++)e[o-1]=arguments[o];return i.produceWithPatches(t,(function(t){return n.apply(void 0,[t].concat(e))}))}:[this.produce(n,t,(function(n,t){r=n,e=t;})),r,e]},i.createDraft=function(e){r(e)||n(8),t(e)&&(e=D(e));var i=w(this),o=R(this,e,void 0);return o[Q].C=!0,O(i),o},i.finishDraft=function(t,r){var e=t&&t[Q];(e&&e.C||n(9),e.I&&n(10));var i=e.A;return j(i,r),P(void 0,i)},i.setAutoFreeze=function(n){this.N=n;},i.setUseProxies=function(t){t&&!B&&n(20),this.O=t;},i.applyPatches=function(n,r){var e;for(e=r.length-1;e>=0;e--){var i=r[e];if(0===i.path.length&&"replace"===i.op){n=i.value;break}}var o=b("Patches").$;return t(n)?o(n,r):this.produce(n,(function(n){return o(n,r.slice(e+1))}))},e}(),un=new on,an=un.produce,fn=un.produceWithPatches.bind(un),cn=un.setAutoFreeze.bind(un),sn=un.setUseProxies.bind(un),vn=un.applyPatches.bind(un),pn=un.createDraft.bind(un),ln=un.finishDraft.bind(un);
 
 // Return current date (now or global override)
 const getDate = () => {
@@ -33049,14 +33049,16 @@ const fold = (hash, text) => {
   }
 
   for (let i = 0; i < text.length; i++) {
-    hash = (hash << 5) - hash + text.charCodeAt(i);
+    hash = (hash << 5) - hash + text.charCodeAt(i); // eslint-disable-next-line unicorn/prefer-math-trunc
+
     hash |= 0;
   }
 
   return hash < 0 ? hash * -2 : hash;
 };
 
-const foldObject = (hash, object, seen) => Object.keys(object).sort().reduce((hash, key) => {
+const foldObject = (hash, object, seen) => Object.keys(object).sort() // eslint-disable-next-line unicorn/no-reduce
+.reduce((hash, key) => {
   return foldValue(hash, object[key], key, seen);
 }, hash);
 
@@ -33475,11 +33477,7 @@ const moveReducer = (draft, action) => {
   } = action; // Get start timestamp of new list
 
   if (!unix) {
-    if (target) {
-      unix = getMidnight(draft.memos[target].unix);
-    } else {
-      unix = getMidnight(draft.memos[id].unix);
-    }
+    unix = getMidnight(target ? draft.memos[target].unix : draft.memos[id].unix);
   } // Assume target based on context
 
 
@@ -33520,6 +33518,7 @@ const moveReducer = (draft, action) => {
   if (memo.id === target) {
     return;
   } // Reorder list adding moved memo into position
+  // eslint-disable-next-line unicorn/no-reduce
 
 
   range.reduce((order, item) => {
@@ -33772,7 +33771,7 @@ const configureStore = () => {
 const Footer = () => {
   return /*#__PURE__*/react.createElement("footer", {
     className: "footer"
-  }, /*#__PURE__*/react.createElement("small", null, "v", "0.8.2", " |", ' ', /*#__PURE__*/react.createElement("span", {
+  }, /*#__PURE__*/react.createElement("small", null, "v", "0.8.3", " |", ' ', /*#__PURE__*/react.createElement("span", {
     className: "vh"
   }, "Copyright"), " \xA9 ", new Date().getFullYear(), ' ', /*#__PURE__*/react.createElement("a", {
     href: "https://dbushell.com/",
@@ -33979,10 +33978,13 @@ var Overlay$1 = /*#__PURE__*/react.memo(Overlay);
 const OverlayPassword = props => {
   const form = react.useRef();
   const password = react.useRef();
+  const {
+    onSubmit: onSubmitProp
+  } = props;
   const onSubmit = react.useCallback(ev => {
     ev.preventDefault();
-    props.onSubmit(form.current, password.current);
-  }, [props.onSubmit, form, password]);
+    onSubmitProp(form.current, password.current);
+  }, [onSubmitProp, form, password]);
   return /*#__PURE__*/react.createElement(Overlay$1, {
     text: props.label
   }, /*#__PURE__*/react.createElement("form", {
@@ -34107,11 +34109,17 @@ const Delete = /*#__PURE__*/react.memo(({
 });
 
 const Memo = props => {
-  const [text, setText] = react.useState(props.text || '');
+  const {
+    text: initialText,
+    isFocus,
+    setFocus,
+    onEdit
+  } = props;
+  const [text, setText] = react.useState(initialText || '');
   const ref = react.useRef(); // Reset internal state to Redux state when out of focus
 
-  if (!props.isFocus && text !== props.text) {
-    setText(props.text);
+  if (!isFocus && text !== initialText) {
+    setText(initialText);
   }
 
   const onHeight = react.useCallback(() => {
@@ -34125,10 +34133,10 @@ const Memo = props => {
     });
   }, [ref]); // Auto-rezize `<textarea>` element
 
-  react.useEffect(onHeight, [text]);
+  react.useEffect(onHeight, [text, onHeight]);
   react.useEffect(() => {
     // Focus `<textarea>` when adding new item
-    if (props.isFocus !== true && text === '') {
+    if (isFocus !== true && text === '') {
       ref.current.focus();
     } // Setup Observer on mount
 
@@ -34153,25 +34161,25 @@ const Memo = props => {
       if (observer) {
         observer.disconnect();
       }
-    };
+    }; // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref]); // Handle `<textarea>` event
 
   const onFocus = react.useCallback(() => {
-    props.setFocus(true);
-  }, [props.setFocus]); // Handle `<textarea>` event
+    setFocus(true);
+  }, [setFocus]); // Handle `<textarea>` event
   // Trim whitespace and newlines
   // Use callback to update Redux state unless delete button was clicked
 
   const onBlur = react.useCallback(ev => {
-    props.setFocus(false);
+    setFocus(false);
 
     if (ev.relatedTarget && ev.relatedTarget.classList.contains('icon--delete')) {
       return;
     }
 
     const newText = ev.target.value.trim();
-    props.onEdit(newText);
-  }, [props.setFocus, props.onEdit]); // Handle `<textarea>` event
+    onEdit(newText);
+  }, [setFocus, onEdit]); // Handle `<textarea>` event
   // Only update local state whilst editing
 
   const onChange = react.useCallback(ev => {
@@ -34249,6 +34257,11 @@ const onDrag = element => {
 };
 
 const Item = props => {
+  const {
+    id: memoId,
+    text: memoText,
+    isDone
+  } = props;
   const dispatch = useDispatch();
   const [isFocus, setFocus] = react.useState(false);
   const {
@@ -34257,26 +34270,53 @@ const Item = props => {
   const dragData = getDragData();
   const ref = react.useRef();
   const handleRef = react.useRef();
-  const isDragging = isDrag && dragData.memo.id === props.id;
+  const isDragging = isDrag && dragData.memo.id === memoId;
   const onEdit = react.useCallback(newText => {
     if (newText.length === 0) {
-      dispatch(Actions.delete(props.id));
-    } else if (newText !== props.text) {
-      dispatch(Actions.edit(props.id, newText));
+      dispatch(Actions.delete(memoId));
+    } else if (newText !== memoText) {
+      dispatch(Actions.edit(memoId, newText));
     }
-  }, [dispatch, props.id, props.text]);
+  }, [dispatch, memoId, memoText]);
   const onDone = react.useCallback(() => {
-    dispatch(Actions.done(props.id));
-  }, [dispatch]);
+    dispatch(Actions.done(memoId));
+  }, [dispatch, memoId]);
   const onDelete = react.useCallback(() => {
-    dispatch(Actions.delete(props.id));
-  }, [dispatch]); // Use `mousedown` event to set focus to ensure blur event `relatedTarget`
+    dispatch(Actions.delete(memoId));
+  }, [dispatch, memoId]); // Use `mousedown` event to set focus to ensure blur event `relatedTarget`
   // is set to the `<button>` element
 
   const onDeleteDown = react.useCallback(ev => {
     ev.target.focus();
     setFocus(true);
-  }, [dispatch]);
+  }, []);
+  const onMouseMove = react.useCallback(ev => {
+    ev.preventDefault();
+    const {
+      clientX,
+      clientY
+    } = ev;
+    window[dragKey].clientX = clientX;
+    window[dragKey].clientY = clientY;
+    window[dragKey].elements = window.document.elementsFromPoint(clientX, clientY);
+  }, []);
+  const onTouchMove = react.useCallback(ev => {
+    ev.preventDefault();
+    const {
+      clientX,
+      clientY
+    } = ev.targetTouches[0];
+    window[dragKey].clientX = clientX;
+    window[dragKey].clientY = clientY;
+    window[dragKey].elements = window.document.elementsFromPoint(clientX, clientY);
+  }, []);
+  const onMouseUp = react.useCallback(() => {
+    window.removeEventListener('mousemove', onMouseMove);
+    window.removeEventListener('mouseup', onMouseUp);
+    dispatch(Actions.drop({
+      id: memoId
+    }));
+  }, [dispatch, memoId, onMouseMove]);
   const onMouseDown = react.useCallback(ev => {
     if (ev.button !== 0) {
       return;
@@ -34295,27 +34335,18 @@ const Item = props => {
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mouseup', onMouseUp);
     dispatch(Actions.drag({
-      id: props.id,
+      id: memoId,
       data
     }));
-  }, [ref, dispatch]);
-  const onMouseMove = react.useCallback(ev => {
-    ev.preventDefault();
-    const {
-      clientX,
-      clientY
-    } = ev;
-    window[dragKey].clientX = clientX;
-    window[dragKey].clientY = clientY;
-    window[dragKey].elements = window.document.elementsFromPoint(clientX, clientY);
-  }, [ref]);
-  const onMouseUp = react.useCallback(() => {
-    window.removeEventListener('mousemove', onMouseMove);
-    window.removeEventListener('mouseup', onMouseUp);
+  }, [dispatch, ref, memoId, onMouseMove, onMouseUp]);
+  const onTouchEnd = react.useCallback(() => {
+    window.removeEventListener('touchmove', onTouchMove);
+    window.removeEventListener('touchcancel', onTouchEnd);
+    window.removeEventListener('touchend', onTouchEnd);
     dispatch(Actions.drop({
-      id: props.id
+      id: memoId
     }));
-  }, [ref, dispatch]);
+  }, [dispatch, memoId, onTouchMove]);
   const onTouchStart = react.useCallback(ev => {
     if (ev.touches.length !== 1) {
       return;
@@ -34337,47 +34368,33 @@ const Item = props => {
     window.addEventListener('touchcancel', onTouchEnd);
     window.addEventListener('touchend', onTouchEnd);
     dispatch(Actions.drag({
-      id: props.id,
+      id: memoId,
       data
     }));
-  }, [ref, dispatch]);
-  const onTouchMove = react.useCallback(ev => {
-    ev.preventDefault();
-    const {
-      clientX,
-      clientY
-    } = ev.targetTouches[0];
-    window[dragKey].clientX = clientX;
-    window[dragKey].clientY = clientY;
-    window[dragKey].elements = window.document.elementsFromPoint(clientX, clientY);
-  }, [ref]);
-  const onTouchEnd = react.useCallback(() => {
-    window.removeEventListener('touchmove', onTouchMove);
-    window.removeEventListener('touchcancel', onTouchEnd);
-    window.removeEventListener('touchend', onTouchEnd);
-    dispatch(Actions.drop({
-      id: props.id
-    }));
-  }, [ref, dispatch]);
+  }, [dispatch, ref, memoId, onTouchMove, onTouchEnd]);
   react.useEffect(() => {
-    if (handleRef.current) {
-      handleRef.current.addEventListener('mousedown', onMouseDown);
+    const {
+      current
+    } = handleRef;
+
+    if (current) {
+      current.addEventListener('mousedown', onMouseDown);
 
       if ('ontouchstart' in window) {
-        handleRef.current.addEventListener('touchstart', onTouchStart);
+        current.addEventListener('touchstart', onTouchStart);
       }
     }
 
     return () => {
-      if (handleRef.current) {
-        handleRef.current.removeEventListener('mousedown', onMouseDown);
+      if (current) {
+        current.removeEventListener('mousedown', onMouseDown);
 
         if ('ontouchstart' in window) {
-          handleRef.current.removeEventListener('touchstart', onTouchStart);
+          current.removeEventListener('touchstart', onTouchStart);
         }
       }
     };
-  }, [handleRef]);
+  }, [handleRef, onMouseDown, onTouchStart]);
   react.useEffect(() => {
     if (ref.current) {
       if (isDrag) {
@@ -34389,7 +34406,7 @@ const Item = props => {
   }, [ref, isDrag]);
   const classes = ['item'];
 
-  if (props.isDone) {
+  if (isDone) {
     classes.push('item--done');
   }
 
@@ -34399,15 +34416,15 @@ const Item = props => {
 
   return /*#__PURE__*/react.createElement("article", {
     ref: ref,
-    id: props.id,
+    id: memoId,
     className: classes.join(' ')
   }, /*#__PURE__*/react.createElement(Handle, {
     ref: handleRef,
     isDisabled: isFocus
   }), /*#__PURE__*/react.createElement(Memo$1, _extends_1({
-    id: props.id,
-    text: props.text,
-    isDisabled: props.isDone
+    id: memoId,
+    text: memoText,
+    isDisabled: isDone
   }, {
     isFocus,
     setFocus
@@ -34415,7 +34432,7 @@ const Item = props => {
     onEdit: onEdit
   })), isFocus === false && /*#__PURE__*/react.createElement(Done, {
     isDisabled: isDragging,
-    isPressed: props.isDone,
+    isPressed: isDone,
     onClick: onDone
   }), isFocus === true && /*#__PURE__*/react.createElement(Delete, {
     isDisabled: isDragging,
@@ -34647,7 +34664,7 @@ const MuteSwanApp = () => {
     window.addEventListener('offline', onStatus);
     onStatus(); // Cleanup old memos
 
-    onCleanup();
+    onCleanup(); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const onPasswordSubmit = react.useCallback(async (form, password) => {
     if (password.value) {
@@ -34682,7 +34699,10 @@ const MuteSwanApp = () => {
 
 const MuteSwanLogin = props => {
   const [isValidating, setValidating] = react.useState(true);
-  const [isError, setError] = react.useState(false); // Handle password form submissions
+  const [isError, setError] = react.useState(false);
+  const {
+    onSuccess
+  } = props; // Handle password form submissions
 
   const onSubmit = react.useCallback(async (form, password) => {
     setError(false);
@@ -34698,7 +34718,7 @@ const MuteSwanLogin = props => {
         window.navigator.credentials.store(data);
       }
 
-      props.onSuccess();
+      onSuccess();
     } else {
       setTimeout(() => {
         setError(true);
@@ -34706,7 +34726,7 @@ const MuteSwanLogin = props => {
         password.focus();
       }, 1000);
     }
-  }); // Attempt to auto-login on first load
+  }, [onSuccess]); // Attempt to auto-login on first load
 
   const autoLogin = react.useCallback(async () => {
     try {
@@ -34717,13 +34737,14 @@ const MuteSwanLogin = props => {
 
       if (data) {
         if (await activatePassword(data.password)) {
-          props.onSuccess();
+          onSuccess();
           return;
         }
 
         setError(true);
       }
     } catch (error) {
+      console.log(error);
       window.document.addEventListener('input', ev => {
         if (ev.target.name === 'password' && ev.inputType === 'insertReplacementText') {
           onSubmit(ev.target.parentNode, ev.target);
@@ -34734,10 +34755,10 @@ const MuteSwanLogin = props => {
     }
 
     setValidating(false);
-  }, []);
+  }, [onSubmit, onSuccess]);
   react.useEffect(() => {
     autoLogin();
-  }, []);
+  }, [autoLogin]);
   return /*#__PURE__*/react.createElement("div", {
     className: "muteswan"
   }, /*#__PURE__*/react.createElement(HeaderBasic$1, null), isValidating ? /*#__PURE__*/react.createElement(Overlay$1, null) : null, isValidating ? null : /*#__PURE__*/react.createElement(OverlayPassword$1, {

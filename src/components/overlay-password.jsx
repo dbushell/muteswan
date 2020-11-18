@@ -5,12 +5,14 @@ const OverlayPassword = (props) => {
   const form = useRef();
   const password = useRef();
 
+  const {onSubmit: onSubmitProp} = props;
+
   const onSubmit = useCallback(
     (ev) => {
       ev.preventDefault();
-      props.onSubmit(form.current, password.current);
+      onSubmitProp(form.current, password.current);
     },
-    [props.onSubmit, form, password]
+    [onSubmitProp, form, password]
   );
 
   return (

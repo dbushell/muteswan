@@ -9,29 +9,34 @@ const MuteSwanLogin = (props) => {
   const [isValidating, setValidating] = useState(true);
   const [isError, setError] = useState(false);
 
-  // Handle password form submissions
-  const onSubmit = useCallback(async (form, password) => {
-    setError(false);
-    setValidating(true);
-    let data = null;
-    if ('PasswordCredential' in window) {
-      data = new window.PasswordCredential(form);
-    }
+  const {onSuccess} = props;
 
-    if (await activatePassword(password.value)) {
-      if (data) {
-        window.navigator.credentials.store(data);
+  // Handle password form submissions
+  const onSubmit = useCallback(
+    async (form, password) => {
+      setError(false);
+      setValidating(true);
+      let data = null;
+      if ('PasswordCredential' in window) {
+        data = new window.PasswordCredential(form);
       }
 
-      props.onSuccess();
-    } else {
-      setTimeout(() => {
-        setError(true);
-        setValidating(false);
-        password.focus();
-      }, 1000);
-    }
-  });
+      if (await activatePassword(password.value)) {
+        if (data) {
+          window.navigator.credentials.store(data);
+        }
+
+        onSuccess();
+      } else {
+        setTimeout(() => {
+          setError(true);
+          setValidating(false);
+          password.focus();
+        }, 1000);
+      }
+    },
+    [onSuccess]
+  );
 
   // Attempt to auto-login on first load
   const autoLogin = useCallback(async () => {
@@ -42,13 +47,14 @@ const MuteSwanLogin = (props) => {
       });
       if (data) {
         if (await activatePassword(data.password)) {
-          props.onSuccess();
+          onSuccess();
           return;
         }
 
         setError(true);
       }
     } catch (error) {
+      console.log(error);
       window.document.addEventListener(
         'input',
         (ev) => {
@@ -64,11 +70,11 @@ const MuteSwanLogin = (props) => {
     }
 
     setValidating(false);
-  }, []);
+  }, [onSubmit, onSuccess]);
 
   useEffect(() => {
     autoLogin();
-  }, []);
+  }, [autoLogin]);
 
   return (
     <div className="muteswan">

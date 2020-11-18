@@ -10,6 +10,7 @@ const fold = (hash, text) => {
 
   for (let i = 0; i < text.length; i++) {
     hash = (hash << 5) - hash + text.charCodeAt(i);
+    // eslint-disable-next-line unicorn/prefer-math-trunc
     hash |= 0;
   }
 
@@ -19,6 +20,7 @@ const fold = (hash, text) => {
 const foldObject = (hash, object, seen) =>
   Object.keys(object)
     .sort()
+    // eslint-disable-next-line unicorn/no-reduce
     .reduce((hash, key) => {
       return foldValue(hash, object[key], key, seen);
     }, hash);

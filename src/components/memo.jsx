@@ -1,12 +1,14 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 
 const Memo = (props) => {
-  const [text, setText] = useState(props.text || '');
+  const {text: initialText, isFocus, setFocus, onEdit} = props;
+
+  const [text, setText] = useState(initialText || '');
   const ref = useRef();
 
   // Reset internal state to Redux state when out of focus
-  if (!props.isFocus && text !== props.text) {
-    setText(props.text);
+  if (!isFocus && text !== initialText) {
+    setText(initialText);
   }
 
   const onHeight = useCallback(() => {
@@ -20,11 +22,11 @@ const Memo = (props) => {
   }, [ref]);
 
   // Auto-rezize `<textarea>` element
-  useEffect(onHeight, [text]);
+  useEffect(onHeight, [text, onHeight]);
 
   useEffect(() => {
     // Focus `<textarea>` when adding new item
-    if (props.isFocus !== true && text === '') {
+    if (isFocus !== true && text === '') {
       ref.current.focus();
     }
 
@@ -49,19 +51,20 @@ const Memo = (props) => {
         observer.disconnect();
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref]);
 
   // Handle `<textarea>` event
   const onFocus = useCallback(() => {
-    props.setFocus(true);
-  }, [props.setFocus]);
+    setFocus(true);
+  }, [setFocus]);
 
   // Handle `<textarea>` event
   // Trim whitespace and newlines
   // Use callback to update Redux state unless delete button was clicked
   const onBlur = useCallback(
     (ev) => {
-      props.setFocus(false);
+      setFocus(false);
       if (
         ev.relatedTarget &&
         ev.relatedTarget.classList.contains('icon--delete')
@@ -70,9 +73,9 @@ const Memo = (props) => {
       }
 
       const newText = ev.target.value.trim();
-      props.onEdit(newText);
+      onEdit(newText);
     },
-    [props.setFocus, props.onEdit]
+    [setFocus, onEdit]
   );
 
   // Handle `<textarea>` event

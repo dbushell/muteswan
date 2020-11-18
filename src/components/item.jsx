@@ -49,6 +49,8 @@ const onDrag = (element) => {
 };
 
 const Item = (props) => {
+  const {id: memoId, text: memoText, isDone} = props;
+
   const dispatch = useDispatch();
   const [isFocus, setFocus] = useState(false);
   const {isDrag} = useFlags();
@@ -57,36 +59,61 @@ const Item = (props) => {
   const ref = useRef();
   const handleRef = useRef();
 
-  const isDragging = isDrag && dragData.memo.id === props.id;
+  const isDragging = isDrag && dragData.memo.id === memoId;
 
   const onEdit = useCallback(
     (newText) => {
       if (newText.length === 0) {
-        dispatch(Actions.delete(props.id));
-      } else if (newText !== props.text) {
-        dispatch(Actions.edit(props.id, newText));
+        dispatch(Actions.delete(memoId));
+      } else if (newText !== memoText) {
+        dispatch(Actions.edit(memoId, newText));
       }
     },
-    [dispatch, props.id, props.text]
+    [dispatch, memoId, memoText]
   );
 
   const onDone = useCallback(() => {
-    dispatch(Actions.done(props.id));
-  }, [dispatch]);
+    dispatch(Actions.done(memoId));
+  }, [dispatch, memoId]);
 
   const onDelete = useCallback(() => {
-    dispatch(Actions.delete(props.id));
-  }, [dispatch]);
+    dispatch(Actions.delete(memoId));
+  }, [dispatch, memoId]);
 
   // Use `mousedown` event to set focus to ensure blur event `relatedTarget`
   // is set to the `<button>` element
-  const onDeleteDown = useCallback(
-    (ev) => {
-      ev.target.focus();
-      setFocus(true);
-    },
-    [dispatch]
-  );
+  const onDeleteDown = useCallback((ev) => {
+    ev.target.focus();
+    setFocus(true);
+  }, []);
+
+  const onMouseMove = useCallback((ev) => {
+    ev.preventDefault();
+    const {clientX, clientY} = ev;
+    window[dragKey].clientX = clientX;
+    window[dragKey].clientY = clientY;
+    window[dragKey].elements = window.document.elementsFromPoint(
+      clientX,
+      clientY
+    );
+  }, []);
+
+  const onTouchMove = useCallback((ev) => {
+    ev.preventDefault();
+    const {clientX, clientY} = ev.targetTouches[0];
+    window[dragKey].clientX = clientX;
+    window[dragKey].clientY = clientY;
+    window[dragKey].elements = window.document.elementsFromPoint(
+      clientX,
+      clientY
+    );
+  }, []);
+
+  const onMouseUp = useCallback(() => {
+    window.removeEventListener('mousemove', onMouseMove);
+    window.removeEventListener('mouseup', onMouseUp);
+    dispatch(Actions.drop({id: memoId}));
+  }, [dispatch, memoId, onMouseMove]);
 
   const onMouseDown = useCallback(
     (ev) => {
@@ -106,30 +133,17 @@ const Item = (props) => {
       };
       window.addEventListener('mousemove', onMouseMove);
       window.addEventListener('mouseup', onMouseUp);
-      dispatch(Actions.drag({id: props.id, data}));
+      dispatch(Actions.drag({id: memoId, data}));
     },
-    [ref, dispatch]
+    [dispatch, ref, memoId, onMouseMove, onMouseUp]
   );
 
-  const onMouseMove = useCallback(
-    (ev) => {
-      ev.preventDefault();
-      const {clientX, clientY} = ev;
-      window[dragKey].clientX = clientX;
-      window[dragKey].clientY = clientY;
-      window[dragKey].elements = window.document.elementsFromPoint(
-        clientX,
-        clientY
-      );
-    },
-    [ref]
-  );
-
-  const onMouseUp = useCallback(() => {
-    window.removeEventListener('mousemove', onMouseMove);
-    window.removeEventListener('mouseup', onMouseUp);
-    dispatch(Actions.drop({id: props.id}));
-  }, [ref, dispatch]);
+  const onTouchEnd = useCallback(() => {
+    window.removeEventListener('touchmove', onTouchMove);
+    window.removeEventListener('touchcancel', onTouchEnd);
+    window.removeEventListener('touchend', onTouchEnd);
+    dispatch(Actions.drop({id: memoId}));
+  }, [dispatch, memoId, onTouchMove]);
 
   const onTouchStart = useCallback(
     (ev) => {
@@ -150,49 +164,29 @@ const Item = (props) => {
       window.addEventListener('touchmove', onTouchMove, {passive: false});
       window.addEventListener('touchcancel', onTouchEnd);
       window.addEventListener('touchend', onTouchEnd);
-      dispatch(Actions.drag({id: props.id, data}));
+      dispatch(Actions.drag({id: memoId, data}));
     },
-    [ref, dispatch]
+    [dispatch, ref, memoId, onTouchMove, onTouchEnd]
   );
-
-  const onTouchMove = useCallback(
-    (ev) => {
-      ev.preventDefault();
-      const {clientX, clientY} = ev.targetTouches[0];
-      window[dragKey].clientX = clientX;
-      window[dragKey].clientY = clientY;
-      window[dragKey].elements = window.document.elementsFromPoint(
-        clientX,
-        clientY
-      );
-    },
-    [ref]
-  );
-
-  const onTouchEnd = useCallback(() => {
-    window.removeEventListener('touchmove', onTouchMove);
-    window.removeEventListener('touchcancel', onTouchEnd);
-    window.removeEventListener('touchend', onTouchEnd);
-    dispatch(Actions.drop({id: props.id}));
-  }, [ref, dispatch]);
 
   useEffect(() => {
-    if (handleRef.current) {
-      handleRef.current.addEventListener('mousedown', onMouseDown);
+    const {current} = handleRef;
+    if (current) {
+      current.addEventListener('mousedown', onMouseDown);
       if ('ontouchstart' in window) {
-        handleRef.current.addEventListener('touchstart', onTouchStart);
+        current.addEventListener('touchstart', onTouchStart);
       }
     }
 
     return () => {
-      if (handleRef.current) {
-        handleRef.current.removeEventListener('mousedown', onMouseDown);
+      if (current) {
+        current.removeEventListener('mousedown', onMouseDown);
         if ('ontouchstart' in window) {
-          handleRef.current.removeEventListener('touchstart', onTouchStart);
+          current.removeEventListener('touchstart', onTouchStart);
         }
       }
     };
-  }, [handleRef]);
+  }, [handleRef, onMouseDown, onTouchStart]);
 
   useEffect(() => {
     if (ref.current) {
@@ -205,7 +199,7 @@ const Item = (props) => {
   }, [ref, isDrag]);
 
   const classes = ['item'];
-  if (props.isDone) {
+  if (isDone) {
     classes.push('item--done');
   }
 
@@ -214,21 +208,17 @@ const Item = (props) => {
   }
 
   return (
-    <article ref={ref} id={props.id} className={classes.join(' ')}>
+    <article ref={ref} id={memoId} className={classes.join(' ')}>
       <Handle ref={handleRef} isDisabled={isFocus} />
       <Memo
-        id={props.id}
-        text={props.text}
-        isDisabled={props.isDone}
+        id={memoId}
+        text={memoText}
+        isDisabled={isDone}
         {...{isFocus, setFocus}}
         onEdit={onEdit}
       />
       {isFocus === false && (
-        <Done
-          isDisabled={isDragging}
-          isPressed={props.isDone}
-          onClick={onDone}
-        />
+        <Done isDisabled={isDragging} isPressed={isDone} onClick={onDone} />
       )}
       {isFocus === true && (
         <Delete

@@ -26,11 +26,9 @@ const moveReducer = (draft, action) => {
 
   // Get start timestamp of new list
   if (!unix) {
-    if (target) {
-      unix = getMidnight(draft.memos[target].unix);
-    } else {
-      unix = getMidnight(draft.memos[id].unix);
-    }
+    unix = getMidnight(
+      target ? draft.memos[target].unix : draft.memos[id].unix
+    );
   }
 
   // Assume target based on context
@@ -78,6 +76,7 @@ const moveReducer = (draft, action) => {
   }
 
   // Reorder list adding moved memo into position
+  // eslint-disable-next-line unicorn/no-reduce
   range.reduce((order, item) => {
     if (item.id === memo.id) {
       return order;

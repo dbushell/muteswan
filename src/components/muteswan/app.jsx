@@ -53,6 +53,7 @@ const MuteSwanApp = () => {
 
     // Cleanup old memos
     onCleanup();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onPasswordSubmit = useCallback(
