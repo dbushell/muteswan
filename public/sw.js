@@ -1,4 +1,4 @@
-const ver = `0.8.3`;
+const ver = `0.8.4`;
 const cacheName = `muteswan-${ver}`;
 
 const precache = [

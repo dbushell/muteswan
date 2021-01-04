@@ -2,18 +2,9 @@ function getDefaultExportFromCjs (x) {
 	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
 }
 
-function createCommonjsModule(fn, basedir, module) {
-	return module = {
-		path: basedir,
-		exports: {},
-		require: function (path, base) {
-			return commonjsRequire(path, (base === undefined || base === null) ? module.path : base);
-		}
-	}, fn(module, module.exports), module.exports;
-}
-
-function commonjsRequire () {
-	throw new Error('Dynamic requires are not currently supported by @rollup/plugin-commonjs');
+function createCommonjsModule(fn) {
+  var module = { exports: {} };
+	return fn(module, module.exports), module.exports;
 }
 
 /*
@@ -104,6 +95,15 @@ var objectAssign = shouldUseNative() ? Object.assign : function (target, source)
 
 	return to;
 };
+
+/** @license React v17.0.1
+ * react.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
 var react_development = createCommonjsModule(function (module, exports) {
 
@@ -2437,6 +2437,15 @@ var react = createCommonjsModule(function (module) {
 }
 });
 
+/** @license React v0.20.1
+ * scheduler.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 var scheduler_development = createCommonjsModule(function (module, exports) {
 
 {
@@ -3277,6 +3286,15 @@ var scheduler = createCommonjsModule(function (module) {
 }
 });
 
+/** @license React v0.20.1
+ * scheduler-tracing.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 var schedulerTracing_development = createCommonjsModule(function (module, exports) {
 
 {
@@ -3622,6 +3640,15 @@ var tracing = createCommonjsModule(function (module) {
   module.exports = schedulerTracing_development;
 }
 });
+
+/** @license React v17.0.1
+ * react-dom.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
 var reactDom_development = createCommonjsModule(function (module, exports) {
 
@@ -29877,6 +29904,15 @@ var reactDom = createCommonjsModule(function (module) {
 }
 });
 
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 var reactIs_development = createCommonjsModule(function (module, exports) {
 
 
@@ -30068,6 +30104,13 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 var ReactPropTypesSecret_1 = ReactPropTypesSecret;
 
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 var printWarning = function() {};
 
 {
@@ -30161,6 +30204,19 @@ checkPropTypes.resetWarningCache = function() {
 };
 
 var checkPropTypes_1 = checkPropTypes;
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+
+
+
 
 var has$1 = Function.call.bind(Object.prototype.hasOwnProperty);
 var printWarning$1 = function() {};
@@ -30739,7 +30795,6 @@ var factoryWithTypeCheckers = function(isValidElement, throwOnDirectAccess) {
   return ReactPropTypes;
 };
 
-var propTypes = createCommonjsModule(function (module) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -30747,6 +30802,7 @@ var propTypes = createCommonjsModule(function (module) {
  * LICENSE file in the root directory of this source tree.
  */
 
+var propTypes = createCommonjsModule(function (module) {
 {
   var ReactIs = reactIs;
 
@@ -32581,12 +32637,9 @@ const Actions = {
 };
 Object.freeze(Actions);
 
-var getStorage_1 = createCommonjsModule(function (module, exports) {
+var _default = getStorage;
 
-exports.__esModule = true;
-exports.default = getStorage;
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof$2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$2 = function _typeof(obj) { return typeof obj; }; } else { _typeof$2 = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$2(obj); }
 
 function noop() {}
 
@@ -32597,7 +32650,7 @@ var noopStorage = {
 };
 
 function hasStorage(storageType) {
-  if ((typeof self === "undefined" ? "undefined" : _typeof(self)) !== 'object' || !(storageType in self)) {
+  if ((typeof self === "undefined" ? "undefined" : _typeof$2(self)) !== 'object' || !(storageType in self)) {
     return false;
   }
 
@@ -32625,12 +32678,12 @@ function getStorage(type) {
     return noopStorage;
   }
 }
-});
 
-var createWebStorage_1 = createCommonjsModule(function (module, exports) {
+var getStorage_1 = /*#__PURE__*/Object.defineProperty({
+	default: _default
+}, '__esModule', {value: true});
 
-exports.__esModule = true;
-exports.default = createWebStorage;
+var _default$1 = createWebStorage;
 
 var _getStorage = _interopRequireDefault(getStorage_1);
 
@@ -32656,7 +32709,10 @@ function createWebStorage(type) {
     }
   };
 }
-});
+
+var createWebStorage_1 = /*#__PURE__*/Object.defineProperty({
+	default: _default$1
+}, '__esModule', {value: true});
 
 var storage = createCommonjsModule(function (module, exports) {
 
@@ -33771,7 +33827,7 @@ const configureStore = () => {
 const Footer = () => {
   return /*#__PURE__*/react.createElement("footer", {
     className: "footer"
-  }, /*#__PURE__*/react.createElement("small", null, "v", "0.8.3", " |", ' ', /*#__PURE__*/react.createElement("span", {
+  }, /*#__PURE__*/react.createElement("small", null, "v", "0.8.4", " |", ' ', /*#__PURE__*/react.createElement("span", {
     className: "vh"
   }, "Copyright"), " \xA9 ", new Date().getFullYear(), ' ', /*#__PURE__*/react.createElement("a", {
     href: "https://dbushell.com/",
