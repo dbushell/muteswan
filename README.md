@@ -18,6 +18,4 @@ From my blog:
 * [Bubblewrap Apps in Android Studio](https://dbushell.com/2020/06/01/bubblewrap-twa-pwa-apps-android-studio/)
 * [PWA Encryption and Auto Sign-in](https://dbushell.com/2020/06/08/pwa-web-crypto-encryption-auto-sign-in-redux-persist/)
 
-[<img src="/.github/google-play-badge.png" alt="Get Mute Swan on Google Play" width="128">](https://play.google.com/store/apps/details?id=app.muteswan.android)
-
 Copyright © 2020 [David Bushell](https://dbushell.com) | [@dbushell](https://twitter.com/dbushell)
