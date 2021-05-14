@@ -6,7 +6,7 @@
 
 [muteswan.app](https://muteswan.app/)
 
-[<img src="/.github/muteswan.png" alt="Mute Swan PWA screenshot" width="360">](https://muteswan.app/)
+[<img src="./.github/muteswan.png" alt="Mute Swan PWA screenshot" width="360">](https://muteswan.app/)
 
 * * *
 
