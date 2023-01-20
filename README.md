@@ -6,11 +6,11 @@
 
 [![npm version](https://badge.fury.io/js/muteswan.svg)](https://badge.fury.io/js/muteswan) ![Netlify Status](https://api.netlify.com/api/v1/badges/5dabc8d0-ee67-49e1-9b1a-c75f8f37a2a3/deploy-status)
 
-[**Mute Swan**](https://muteswan.app/) is a short-term daily planner for todos and memos. Add items for the upcoming week. See a history of the past seven days. The app is centred around “today” and older items are automatically deleted.
+[**Mute Swan**](https://muteswan.dbushell.com/) is a short-term daily planner for todos and memos. Add items for the upcoming week. See a history of the past seven days. The app is centred around “today” and older items are automatically deleted.
 
-[muteswan.app](https://muteswan.app/)
+[muteswan.dbushell.com](https://muteswan.dbushell.com/)
 
-[<img src="./.github/muteswan.png" alt="Mute Swan PWA screenshot" width="360">](https://muteswan.app/)
+[<img src="./.github/muteswan.png" alt="Mute Swan PWA screenshot" width="360">](https://muteswan.dbushell.com/)
 
 * * *
 

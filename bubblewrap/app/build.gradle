@@ -20,7 +20,7 @@ apply plugin: 'com.android.application'
 
 def twaManifest = [
     applicationId: 'app.muteswan.android',
-    hostName: 'muteswan.app', // The domain being opened in the TWA.
+    hostName: 'muteswan.dbushell.com', // The domain being opened in the TWA.
     launchUrl: '/', // The start path for the TWA. Must be relative to the domain.
     name: 'Mute Swan', // The application name.
     launcherName: 'Mute Swan', // The name shown on the Android Launcher.
@@ -65,7 +65,7 @@ android {
             // The URL the Web Manifest for the Progressive Web App that the TWA points to. This
             // is used by Chrome OS to open the Web version of the PWA instead of the TWA, as it
             // will probably give a better user experience for non-mobile devices.
-            resValue "string", "webManifestUrl", 'https://muteswan.app/manifest.webmanifest'
+            resValue "string", "webManifestUrl", 'https://muteswan.dbushell.com/manifest.webmanifest'
 
 
         // The hostname is used when building the intent-filter, so the TWA is able to

@@ -29237,7 +29237,7 @@ function injectIntoDevTools(devToolsConfig) {
     scheduleRoot:  scheduleRoot ,
     setRefreshHandler:  setRefreshHandler ,
     // Enables DevTools to append owner stacks to error messages in DEV mode.
-    getCurrentFiber:  getCurrentFiberForDevTools 
+    getCurrentFiber:  getCurrentFiberForDevTools
   });
 }
 
@@ -32003,7 +32003,7 @@ function _objectSpread$6(target) { for (var i = 1; i < arguments.length; i++) { 
 function _defineProperty$2(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /*
-  autoMergeLevel1: 
+  autoMergeLevel1:
     - merges 1 level of substate
     - skips substate if already modified
 */
@@ -33881,7 +33881,7 @@ const configureStore = () => {
 const Footer = () => {
   return /*#__PURE__*/React.createElement("footer", {
     className: "footer"
-  }, /*#__PURE__*/React.createElement("small", null, "v", "0.8.5", " |", ' ', /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement("small", null, "v", "0.8.6", " |", ' ', /*#__PURE__*/React.createElement("span", {
     className: "vh"
   }, "Copyright"), " \xA9 ", new Date().getFullYear(), ' ', /*#__PURE__*/React.createElement("a", {
     href: "https://dbushell.com/",
