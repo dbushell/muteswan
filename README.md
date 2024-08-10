@@ -6,7 +6,7 @@
 
 **Mute Swan** is a short-term daily planner for todos and memos. Add items for the upcoming week. See a history of the past seven days. The app is centred around “today” and older items are automatically deleted.
 
-<img src="./.github/muteswan.png" alt="Mute Swan PWA screenshot" width="360">]
+<img src="./.github/muteswan.png" alt="Mute Swan PWA screenshot" width="360">
 
 * * *
 
