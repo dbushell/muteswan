@@ -1,6 +1,6 @@
 {
   "name": "muteswan",
-  "version": "0.8.6",
+  "version": "0.8.9",
   "description": "🦢",
   "main": "",
   "scripts": {
@@ -24,8 +24,7 @@
   ],
   "author": {
     "name": "David Bushell",
-    "email": "hi@dbushell.com",
-    "url": "https://dbushell.com/"
+    "url": "https://dbushell.com"
   },
   "license": "UNLICENSED",
   "bugs": {
