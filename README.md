@@ -4,11 +4,9 @@
 
 * * *
 
-[**Mute Swan**](https://muteswan.dbushell.com/) is a short-term daily planner for todos and memos. Add items for the upcoming week. See a history of the past seven days. The app is centred around “today” and older items are automatically deleted.
+**Mute Swan** is a short-term daily planner for todos and memos. Add items for the upcoming week. See a history of the past seven days. The app is centred around “today” and older items are automatically deleted.
 
-[muteswan.dbushell.com](https://muteswan.dbushell.com/)
-
-[<img src="./.github/muteswan.png" alt="Mute Swan PWA screenshot" width="360">](https://muteswan.dbushell.com/)
+<img src="./.github/muteswan.png" alt="Mute Swan PWA screenshot" width="360">]
 
 * * *
 
